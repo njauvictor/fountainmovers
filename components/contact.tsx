@@ -28,13 +28,13 @@ export function Contact() {
     e.preventDefault()
 
     const whatsappMessage = encodeURIComponent(
-      `🚚 *New Moving Inquiry*
+      `New Moving Inquiry:
 
-👤 *Name:* ${formData.name}
-📞 *Phone:* ${formData.phone}
-🛠 *Service:* ${formData.serviceType}
+Name ${formData.name}
+Phone: ${formData.phone}
+Service: ${formData.serviceType}
 
-📝 *Message:*
+Message:
 ${formData.message}`
     )
 
