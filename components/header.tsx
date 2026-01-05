@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -98,9 +99,11 @@ export function Header() {
               </motion.a>
             ))}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all">
+             <a href="#contact">
+               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all cursor-pointer">
                 Get Free Quote
               </Button>
+             </a>
             </motion.div>
           </div>
 
@@ -134,9 +137,11 @@ export function Header() {
             </motion.a>
           ))}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-              Get Free Quote
-            </Button>
+           <Link href="#contact">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all">
+                Get Free Quote
+              </Button>
+           </Link>
           </motion.div>
         </motion.div>
       </nav>

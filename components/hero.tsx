@@ -80,16 +80,22 @@ export function Hero() {
               variants={itemVariants}
               className="flex flex-col gap-4 sm:flex-row sm:items-center pt-4"
             >
-              <Button className="w-full sm:w-auto text-base sm:text-lg py-6 px-8 shadow-lg">
+            <a href="#contact">
+                <Button className="w-full sm:w-auto text-base  py-6 px-8 shadow-lg cursor-pointer">
                 Get Free Quote <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+            </a>
 
-              <Button
-                variant="outline"
-                className="w-full sm:w-auto text-base sm:text-lg py-6 px-8 border-2 border-primary/30"
-              >
-                Learn More
-              </Button>
+            <Button
+  asChild
+  variant="outline"
+  className="w-full sm:w-auto text-base py-6 px-8 border-2 border-primary/30"
+>
+  <a href="mailto:jkamuz004@gmail.com">
+    Email Us <CheckCircle className="ml-2 h-5 w-5" />
+  </a>
+</Button>
+
             </motion.div>
 
        

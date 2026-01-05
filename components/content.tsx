@@ -105,9 +105,11 @@ export function Content() {
             solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6 px-8">
+           <a href="#contact">
+             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6 px-8  cursor-pointer">
               Get Free Quote
             </Button>
+           </a>
             <Button variant="outline" className="text-lg py-6 px-8 bg-transparent">
               Call Now: 0720479096
             </Button>
