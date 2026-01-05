@@ -56,8 +56,22 @@ export function Footer() {
         >
           {/* Brand */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-4 text-white">Fountain Movers</h3>
-            <p className="text-sm opacity-90 leading-relaxed">
+           <motion.a
+  href="#"
+  whileHover={{ scale: 1.05 }}
+  className="inline-flex flex-col items-start gap-1"
+>
+  <span className="text-xl font-bold  bg-clip-text text-white">
+    Fountain Movers & Transport
+  </span>
+
+  <span className="h-[1px] w-full bg-white/30" />
+  <span className="text-xs font-semibold text-white">
+    Professional Moving Services in Nairobi, Kenya
+  </span>
+</motion.a>
+
+            <p className="text-sm opacity-90 leading-relaxed mt-4">
               Your trusted moving partner in Nairobi. Professional, reliable, and affordable moving services for homes
               and offices.
             </p>
