@@ -33,7 +33,7 @@ export function Header() {
     >
       {/* Top bar with contact info */}
       <motion.div
-        className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-sm py-3 overflow-hidden"
+        className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-sm py-2 overflow-hidden"
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -67,15 +67,22 @@ export function Header() {
       {/* Main navigation bar */}
       <nav className="max-w-7xl mx-auto px-4 py-4 md:px-8 lg:px-16 border-b border-border">
         <div className="flex items-center justify-between">
-          <motion.a
-            href="#"
-            className="text-2xl  font-bold bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
-          >
-            Fountain Movers & Transport
-            <hr className="mt-1 border-primary/30" />
-            <span className="text-xs font-semibold">Professional Moving Services in Nairobi, Kenya</span>
-          </motion.a>
+        <motion.a
+  href="#"
+  whileHover={{ scale: 1.05 }}
+  className="inline-flex flex-col items-start gap-1"
+>
+  <span className="text-2xl font-bold bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
+    Fountain Movers & Transport
+  </span>
+
+  <span className="h-[1px] w-full bg-primary/30" />
+
+  <span className="text-xs font-semibold text-muted-foreground">
+    Professional Moving Services in Nairobi, Kenya
+  </span>
+</motion.a>
+
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8">
