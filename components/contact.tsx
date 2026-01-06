@@ -19,6 +19,12 @@ export function Contact() {
     name: "",
     phone: "",
     serviceType: "House Moving",
+    movingFrom: "",
+    movingTo: "",
+    bedrooms: "",
+    movingFromFloor: "",
+    movingToFloor: "",
+    otherServices: "",
     message: "",
   })
 
@@ -30,11 +36,19 @@ export function Contact() {
     const whatsappMessage = encodeURIComponent(
       `New Moving Inquiry:
 
-Name ${formData.name}
+Name: ${formData.name}
 Phone: ${formData.phone}
 Service: ${formData.serviceType}
 
-Message:
+Moving Details:
+Moving From: ${formData.movingFrom}
+Moving To: ${formData.movingTo}
+Number of Bedrooms: ${formData.bedrooms}
+Moving From Floor: ${formData.movingFromFloor}
+Moving To Floor: ${formData.movingToFloor}
+Other Services Required: ${formData.otherServices}
+
+Additional Message:
 ${formData.message}`
     )
 
@@ -49,6 +63,12 @@ ${formData.message}`
         name: "",
         phone: "",
         serviceType: "House Moving",
+        movingFrom: "",
+        movingTo: "",
+        bedrooms: "",
+        movingFromFloor: "",
+        movingToFloor: "",
+        otherServices: "",
         message: "",
       })
       setSubmitted(false)
@@ -122,36 +142,38 @@ ${formData.message}`
 
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-semibold mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
-                    placeholder="John Doe"
-                  />
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
+                      placeholder="John Doe"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-semibold mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    required
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
-                    placeholder="0720 000 000"
-                  />
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
+                      placeholder="0720 000 000"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -175,19 +197,173 @@ ${formData.message}`
                   </select>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Moving From *
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      value={formData.movingFrom}
+                      onChange={(e) =>
+                        setFormData({ ...formData, movingFrom: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
+                      placeholder="Current address/location"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Moving To *
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      value={formData.movingTo}
+                      onChange={(e) =>
+                        setFormData({ ...formData, movingTo: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary"
+                      placeholder="New address/location"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      No. of Bedrooms
+                    </label>
+                    <select
+                      value={formData.bedrooms}
+                      onChange={(e) =>
+                        setFormData({ ...formData, bedrooms: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select</option>
+                      <option value="Studio/1 Bed">Studio/1 Bed</option>
+                      <option value="2 Bedrooms">2 Bedrooms</option>
+                      <option value="3 Bedrooms">3 Bedrooms</option>
+                      <option value="4 Bedrooms">4 Bedrooms</option>
+                      <option value="5+ Bedrooms">5+ Bedrooms</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Moving From Floor
+                    </label>
+                    <select
+                      value={formData.movingFromFloor}
+                      onChange={(e) =>
+                        setFormData({ ...formData, movingFromFloor: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select</option>
+                      <option value="Ground Floor">Ground Floor</option>
+                      <option value="1st Floor">1st Floor</option>
+                      <option value="2nd Floor">2nd Floor</option>
+                      <option value="3rd Floor">3rd Floor</option>
+                      <option value="4th Floor">4th Floor</option>
+                      <option value="5th Floor">5th Floor</option>
+                      <option value="6th Floor">6th Floor</option>
+                      <option value="7th Floor">7th Floor</option>
+                      <option value="8th Floor">8th Floor</option>
+                      <option value="9th Floor">9th Floor</option>
+                      <option value="10th+ Floor">10th+ Floor</option>
+
+                      <option value="Basement">Basement</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Moving To Floor
+                    </label>
+                    <select
+                      value={formData.movingToFloor}
+                      onChange={(e) =>
+                        setFormData({ ...formData, movingToFloor: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select</option>
+                      <option value="Ground Floor">Ground Floor</option>
+                      <option value="1st Floor">1st Floor</option>
+                      <option value="2nd Floor">2nd Floor</option>
+                      <option value="3rd Floor">3rd Floor</option>
+                      <option value="4th Floor">4th Floor</option>
+                      <option value="5th Floor">5th Floor</option>
+                      <option value="6th Floor">6th Floor</option>
+                      <option value="7th Floor">7th Floor</option>
+                      <option value="8th Floor">8th Floor</option>
+                      <option value="9th Floor">9th Floor</option>
+                      <option value="10th+ Floor">10th+ Floor</option>
+                      <option value="Basement">Basement</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm font-semibold mb-2">
-                    Message *
+                    Other Services Required (Optional)
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {[
+                      "Packing",
+                      "Unpacking",
+                      "Cleaning",
+                      "Furniture Assembly",
+                      "Storage",
+                      "Vehicle Transport"
+                    ].map((service) => (
+                      <label key={service} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          value={service}
+                          checked={formData.otherServices.includes(service)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setFormData({
+                                ...formData,
+                                otherServices: formData.otherServices
+                                  ? `${formData.otherServices}, ${service}`
+                                  : service
+                              })
+                            } else {
+                              setFormData({
+                                ...formData,
+                                otherServices: formData.otherServices
+                                  .split(", ")
+                                  .filter(s => s !== service)
+                                  .join(", ")
+                              })
+                            }
+                          }}
+                          className="rounded border-gray-300 text-primary focus:ring-primary"
+                        />
+                        <span className="text-sm">{service}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold mb-2">
+                    Additional Message
                   </label>
                   <textarea
-                    required
-                    rows={4}
+                    rows={3}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
                     className="w-full px-4 py-3 border rounded-lg resize-none focus:ring-2 focus:ring-primary"
-                    placeholder="Tell us about your move..."
+                    placeholder="Any special requirements or additional details..."
                   />
                 </div>
 
