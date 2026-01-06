@@ -243,7 +243,7 @@ ${formData.message}`
                       }
                       className="w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-primary"
                     >
-                      <option value="">Select</option>
+                           <option value="">Select</option>
                       <option value="Studio/1 Bed">Studio/1 Bed</option>
                       <option value="2 Bedrooms">2 Bedrooms</option>
                       <option value="3 Bedrooms">3 Bedrooms</option>

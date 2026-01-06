@@ -117,8 +117,8 @@ export function Footer() {
               </motion.div>
               <motion.div className="flex items-start gap-2 group" whileHover={{ x: 5 }}>
                 <Mail className="w-4 h-4 mt-0.5 group-hover:text-white transition" />
-                <a href="mailto:jkamuz004@gmail.com" className="hover:opacity-100 hover:text-white transition">
-                  jkamuz004@gmail.com
+                <a href="mailto:info@fountainmovers.co.ke" className="hover:opacity-100 hover:text-white transition">
+                  info@fountainmovers.co.ke
                 </a>
               </motion.div>
               <motion.div className="flex items-start gap-2 group" whileHover={{ x: 5 }}>

@@ -50,12 +50,12 @@ export function Header() {
             <span className="hidden sm:inline">0720479096</span>
           </motion.a>
           <motion.a
-            href="mailto:jkamuz004@gmail.com"
+            href="mailto:info@fountainmovers.co.ke"
             className="flex items-center gap-2 hover:opacity-80 transition"
             whileHover={{ scale: 1.05 }}
           >
             <Mail className="w-4 h-4" />
-            <span className="hidden sm:inline">jkamuz004@gmail.com</span>
+            <span className="hidden sm:inline">info@fountainmovers.co.ke</span>
           </motion.a>
           </div>
           <div className="flex items-center gap-2">

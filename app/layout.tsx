@@ -99,7 +99,7 @@ export default function RootLayout({
                 addressCountry: "KE",
               },
               telephone: "+254720479096",
-              email: "jkamuz004@gmail.com",
+              email: "info@fountainmovers.co.ke",
               url: "https://fountainmovers.co.ke",
               sameAs: ["https://www.facebook.com/Fountainmovers"],
               priceRange: "$$",

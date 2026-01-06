@@ -91,7 +91,7 @@ export function Hero() {
   variant="outline"
   className="w-full sm:w-auto text-base py-6 px-8 border-2 border-primary/30"
 >
-  <a href="mailto:jkamuz004@gmail.com">
+  <a href="mailto:info@fountainmovers.co.ke">
     Email Us <CheckCircle className="ml-2 h-5 w-5" />
   </a>
 </Button>
